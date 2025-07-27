@@ -26,8 +26,8 @@ export default async function Post({ params }: { params: { post: string } }) {
 
       {post.mainImage ? (
         <Image
-          src={imageBuilder(post.mainImage)}
-          alt={post.mainImage.alt}
+          src={post.mainImage ? imageBuilder(post.mainImage) : ""}
+          alt={post.mainImage.alt ?? ""}
           width={600}
           height={600}
           className="w-full aspect-[4/3] object-cover"
